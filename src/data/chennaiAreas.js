@@ -1,0 +1,20 @@
+export const chennaiAreas = [
+  "Anna Nagar",
+  "Velachery",
+  "Tambaram",
+  "T Nagar",
+  "Porur",
+  "OMR",
+  "Perungudi",
+  "Adyar",
+  "Medavakkam",
+  "Pallikaranai",
+  "Sholinganallur",
+  "Guindy",
+  "Nungambakkam",
+  "Mylapore",
+  "Thiruvanmiyur",
+  "Chromepet",
+  "Madipakkam",
+  "Alwarpet"
+];
