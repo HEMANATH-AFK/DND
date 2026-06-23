@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, Wrench, MessageSquare } from 'lucide-react';
+import { Wrench, MessageSquare } from 'lucide-react';
+import { ShinyButton } from '@hemanath-afk/afk-motion';
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -60,57 +60,30 @@ export default function Navbar() {
             ))}
           </div>
 
-          {/* CTA Button */}
-          <div className="hidden md:block">
-            <a
-              href={whatsappUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center space-x-2 px-5 py-2.5 bg-primaryAccent hover:bg-amber-600 text-background text-sm font-bold rounded-lg transition-all duration-300 active:scale-95 shadow-md shadow-primaryAccent/10"
+          {/* CTA Shiny Button */}
+          <div>
+            <ShinyButton
+              onClick={() => window.open(whatsappUrl, '_blank', 'noopener,noreferrer')}
+              style={{
+                background: 'var(--color-primaryAccent)',
+                color: 'var(--color-background)',
+                border: 'none',
+                padding: '10px 20px',
+                borderRadius: '8px',
+                fontFamily: "var(--font-sans)",
+                fontWeight: 'bold',
+                fontSize: '14px',
+                boxShadow: '0 4px 6px -1px rgba(245, 158, 11, 0.2)',
+                cursor: 'pointer',
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '8px'
+              }}
             >
               <MessageSquare className="w-4 h-4 fill-current stroke-none" />
               <span>Book Service</span>
-            </a>
+            </ShinyButton>
           </div>
-
-          {/* Mobile Menu Button */}
-          <div className="md:hidden">
-            <button
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="p-2 text-textSecondary hover:text-textPrimary hover:bg-secondaryBg rounded-lg focus:outline-none transition-colors"
-              aria-label="Toggle menu"
-            >
-              {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-            </button>
-          </div>
-        </div>
-      </div>
-
-      {/* Mobile Drawer Menu */}
-      <div className={`fixed inset-0 top-[60px] w-full bg-background/98 backdrop-blur-lg border-t border-borderColor z-40 transition-transform duration-300 md:hidden ${
-        isMenuOpen ? 'translate-x-0' : 'translate-x-full'
-      }`}>
-        <div className="flex flex-col p-6 space-y-6">
-          {navLinks.map((link) => (
-            <a
-              key={link.name}
-              href={link.href}
-              onClick={() => setIsMenuOpen(false)}
-              className="text-lg font-medium py-2 border-b border-borderColor/50 transition-colors text-textSecondary hover:text-primaryAccent"
-            >
-              {link.name}
-            </a>
-          ))}
-          
-          <a
-            href={whatsappUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="w-full flex items-center justify-center space-x-2 py-4 bg-primaryAccent hover:bg-amber-600 text-background text-base font-extrabold rounded-xl transition-all duration-300 shadow-md shadow-primaryAccent/15"
-          >
-            <MessageSquare className="w-5 h-5 fill-current stroke-none" />
-            <span>Book Service on WhatsApp</span>
-          </a>
         </div>
       </div>
     </nav>
