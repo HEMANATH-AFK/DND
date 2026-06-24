@@ -1,5 +1,6 @@
 import React from 'react';
-import { Wrench, MapPin, Phone, Mail, Clock } from 'lucide-react';
+import { MapPin, Phone, Mail, Clock } from 'lucide-react';
+import dmdLogo from '../assets/logo.jpg';
 
 export default function Footer({ onOpenLegal }) {
   const currentYear = new Date().getFullYear();
@@ -11,12 +12,14 @@ export default function Footer({ onOpenLegal }) {
           
           {/* Column 1: Brand details */}
           <div className="space-y-4">
-            <a href="#hero" className="flex items-center space-x-2">
-              <div className="p-2 bg-primaryAccent/10 rounded-lg text-primaryAccent">
-                <Wrench className="w-5 h-5 stroke-[2.5]" />
-              </div>
-              <span className="font-extrabold text-xl tracking-wider text-textPrimary uppercase">
-                DMD <span className="text-primaryAccent">Service</span>
+            <a href="#hero" className="flex items-center space-x-3 group">
+              <img 
+                src={dmdLogo} 
+                alt="DMD Logo" 
+                className="h-10 w-auto object-contain rounded-lg transition-transform duration-300 group-hover:scale-102"
+              />
+              <span className="font-black text-lg tracking-wider text-white uppercase font-heading">
+                DMD
               </span>
             </a>
             <p className="text-sm leading-relaxed">
