@@ -21,9 +21,9 @@ import ServiceCard from '../components/ServiceCard';
 import TestimonialCard from '../components/TestimonialCard';
 import FAQAccordion from '../components/FAQAccordion';
 import ServiceRequestForm from '../components/ServiceRequestForm';
-
-// Import assets
 import technicianAcRepair from '../assets/technician_ac_repair.png';
+
+import { whatsappNumber, phoneUrl, displayPhone, getWhatsAppUrl } from '../config/contact';
 
 const WhatsAppIcon = ({ className = "w-4 h-4" }) => (
   <svg 
@@ -36,9 +36,7 @@ const WhatsAppIcon = ({ className = "w-4 h-4" }) => (
 );
 
 export default function Home({ onViewDetails }) {
-  const whatsappNumber = "919999999999";
-  const whatsappUrl = `https://wa.me/${whatsappNumber}?text=Hello%20DMD%20Services%2C%20I%20would%20like%20to%20book%20a%20technician%20visit.`;
-  const phoneUrl = "tel:+919999999999";
+  const whatsappUrl = getWhatsAppUrl("Hello DMD Services, I would like to book a technician visit.");
 
   // Brands list
   const brands = ["Samsung", "LG", "IFB", "Bosch", "Whirlpool", "Godrej", "Haier", "Panasonic"];
@@ -51,7 +49,8 @@ export default function Home({ onViewDetails }) {
     "image": "https://dmdservice.in/logo.png",
     "@id": "https://dmdservice.in",
     "url": "https://dmdservice.in",
-    "telephone": "+919999999999",
+    "telephone": `+${whatsappNumber}`,
+
     "priceRange": "$$",
     "address": {
       "@type": "PostalAddress",
@@ -147,7 +146,7 @@ export default function Home({ onViewDetails }) {
                   className="flex items-center justify-center space-x-2 px-8 py-4 bg-secondaryBg border border-borderColor hover:bg-borderColor text-white text-base font-bold rounded-xl transition-all duration-300 active:scale-95"
                 >
                   <PhoneCall className="w-4 h-4 text-secondaryBlue" />
-                  <span>Call +91 99999 99999</span>
+                  <span>Call {displayPhone}</span>
                 </a>
               </div>
 
@@ -486,7 +485,7 @@ export default function Home({ onViewDetails }) {
                   <h4 className="text-xs font-bold text-white uppercase tracking-widest mb-1.5">Direct Call</h4>
                   <a href={phoneUrl} className="text-base font-bold text-secondaryBlue hover:underline flex items-center space-x-2">
                     <PhoneCall className="w-4 h-4" />
-                    <span>+91 99999 99999</span>
+                    <span>{displayPhone}</span>
                   </a>
                 </div>
                 <div>

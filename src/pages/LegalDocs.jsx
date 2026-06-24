@@ -1,6 +1,7 @@
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
 import { ShieldAlert, FileText } from 'lucide-react';
+import { displayPhone } from '../config/contact';
 
 export function PrivacyPolicy() {
   return (
@@ -29,29 +30,24 @@ export function PrivacyPolicy() {
                 When you request a doorstep appliance repair service using our website, WhatsApp CTA link, or direct call link, we may collect basic personal details that you provide to us, including:
               </p>
               <ul className="list-disc pl-5 space-y-1">
-                <li>Your full name</li>
-                <li>Your mobile phone number</li>
-                <li>Your service address / Chennai locality</li>
-                <li>Appliance defect details and preferred service date</li>
+                <li>Name</li>
+                <li>Contact number</li>
+                <li>Service/repair location (address)</li>
+                <li>Preferred booking date & details of the appliance issue</li>
               </ul>
             </section>
 
             <section className="space-y-2">
               <h2 className="text-base font-bold text-textPrimary uppercase tracking-wider">2. How We Use Your Information</h2>
               <p>
-                We use the collected information solely to:
+                We use the collected details strictly to process and execute your doorstep appliance repair, schedule technician visits, address your support queries, and issue digital service invoices.
               </p>
-              <ul className="list-disc pl-5 space-y-1">
-                <li>Confirm your service request and schedule technician visits</li>
-                <li>Contact you regarding quotes, timing, or technician details</li>
-                <li>Verify your service satisfaction or request customer feedback</li>
-              </ul>
             </section>
 
             <section className="space-y-2">
-              <h2 className="text-base font-bold text-textPrimary uppercase tracking-wider">3. Data Sharing & Security</h2>
+              <h2 className="text-base font-bold text-textPrimary uppercase tracking-wider">3. Data Security & Storage</h2>
               <p>
-                We do not sell, rent, or trade your personal information with third-party advertisers. Your contact details are only shared with the specific certified technician dispatched to resolve your appliance issue. We implement appropriate physical and electronic measures to secure your personal data.
+                We prioritize user data safety. The information you submit via our booking forms or chat links is used solely for service fulfillment and is not sold, rented, or shared with third-party marketing companies.
               </p>
             </section>
 
@@ -70,7 +66,7 @@ export function PrivacyPolicy() {
               <p className="font-semibold text-textPrimary">
                 DMD Service Support<br />
                 Email: info@dmdservice.in<br />
-                Phone: +91 99999 99999
+                Phone: {displayPhone}
               </p>
             </section>
 
