@@ -1,6 +1,7 @@
 import React from 'react';
 import { MapPin, Phone, Mail, Clock } from 'lucide-react';
 import dmdLogo from '../assets/logo.jpg';
+import { phoneUrl, displayPhone } from '../config/contact';
 
 export default function Footer({ onOpenLegal }) {
   const currentYear = new Date().getFullYear();
@@ -75,7 +76,7 @@ export default function Footer({ onOpenLegal }) {
               </li>
               <li className="flex items-center space-x-3">
                 <Phone className="w-4 h-4 text-primaryAccent shrink-0" />
-                <a href="tel:+919999999999" className="hover:text-primaryAccent transition-colors">+91 99999 99999</a>
+                <a href={phoneUrl} className="hover:text-primaryAccent transition-colors">{displayPhone}</a>
               </li>
               <li className="flex items-center space-x-3">
                 <Mail className="w-4 h-4 text-primaryAccent shrink-0" />

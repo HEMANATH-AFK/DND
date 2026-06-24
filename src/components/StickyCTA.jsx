@@ -1,3 +1,5 @@
+import { getWhatsAppUrl } from '../config/contact';
+
 const WhatsAppIcon = ({ className = "w-4 h-4" }) => (
   <svg 
     viewBox="0 0 24 24" 
@@ -9,8 +11,7 @@ const WhatsAppIcon = ({ className = "w-4 h-4" }) => (
 );
 
 export default function StickyCTA() {
-  const whatsappNumber = "919999999999";
-  const whatsappUrl = `https://wa.me/${whatsappNumber}?text=Hello%20DMD%20Services%2C%20I%20would%20like%20to%20book%20a%20repair%20service.`;
+  const whatsappUrl = getWhatsAppUrl("Hello DMD Services, I would like to book a repair service.");
 
   return (
     <div className="fixed bottom-4 left-4 right-4 z-45 md:hidden flex">

@@ -3,6 +3,8 @@ import { MessageSquare } from 'lucide-react';
 import { ShinyButton } from '@hemanath-afk/afk-motion';
 import dmdLogo from '../assets/logo.jpg';
 
+import { getWhatsAppUrl } from '../config/contact';
+
 const WhatsAppIcon = ({ className = "w-4 h-4" }) => (
   <svg 
     viewBox="0 0 24 24" 
@@ -36,8 +38,8 @@ export default function Navbar() {
     { name: 'Contact', href: '#contact' },
   ];
 
-  const whatsappNumber = "919999999999";
-  const whatsappUrl = `https://wa.me/${whatsappNumber}?text=Hello%20DMD%20Services%2C%20I%20would%20like%20to%20book%20a%20repair%20service.`;
+  const whatsappUrl = getWhatsAppUrl("Hello DMD Services, I would like to book a repair service.");
+
 
   return (
     <nav className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 border-b ${
