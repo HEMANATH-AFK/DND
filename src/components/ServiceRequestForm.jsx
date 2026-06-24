@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { AlertCircle, Loader2 } from 'lucide-react';
 import { chennaiAreas } from '../data/chennaiAreas';
+import { getWhatsAppUrl } from '../config/contact';
 
 const WhatsAppIcon = ({ className = "w-4 h-4" }) => (
   <svg 
@@ -51,8 +52,6 @@ export default function ServiceRequestForm() {
 
     setStatus('loading');
     
-    const whatsappNumber = "919999999999";
-    
     // Format date from YYYY-MM-DD to DD/MM/YYYY
     let formattedDate = 'Not specified';
     if (formData.date) {
@@ -75,7 +74,7 @@ Please arrange a technician visit.`;
 
     setTimeout(() => {
       window.open(
-        `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`,
+        getWhatsAppUrl(message),
         "_blank",
         "noopener,noreferrer"
       );

@@ -1,5 +1,6 @@
 import React from 'react';
 import { ArrowRight } from 'lucide-react';
+import { getWhatsAppUrl } from '../config/contact';
 
 const WhatsAppIcon = ({ className = "w-4 h-4" }) => (
   <svg 
@@ -12,7 +13,7 @@ const WhatsAppIcon = ({ className = "w-4 h-4" }) => (
 );
 
 export default function ServiceCard({ service, onViewDetails }) {
-  const whatsappUrl = `https://wa.me/919999999999?text=Hello%20DMD%20Services%2C%20I%20would%20like%20to%20book%20a%20technician%20visit%20for%20${encodeURIComponent(service.name)}.%20Starting%20price%20is%20%E2%82%B9${service.price}.`;
+  const whatsappUrl = getWhatsAppUrl(`Hello DMD Services, I would like to book a technician visit for ${service.name}. Starting price is ₹${service.price}.`);
 
   return (
     <div 
