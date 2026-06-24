@@ -1,56 +1,56 @@
 export const reviewsData = [
   {
     id: 1,
-    name: "Rajesh Kumar",
-    location: "Anna Nagar, Chennai",
-    appliance: "Air Conditioner",
+    name: "Ramesh K.",
+    location: "Velachery",
+    appliance: "AC Service",
     rating: 5,
-    date: "2 days ago",
-    comment: "My AC cooling issue was resolved in under two hours. The technician was extremely professional, identified a capacitor issue, changed it, and cleaned the filters. Excellent doorstep service!"
+    date: "1 day ago",
+    comment: "Technician arrived in less than two hours and fixed the cooling issue quickly."
   },
   {
     id: 2,
-    name: "Priya Sundaram",
-    location: "Velachery, Chennai",
-    appliance: "Double Door Refrigerator",
+    name: "Priya S.",
+    location: "Adyar",
+    appliance: "Washing Machine Repair",
     rating: 5,
-    date: "1 week ago",
-    comment: "Our refrigerator compressor stopped working suddenly. I raised a request through their WhatsApp. Within 3 hours, the technician was at my home. Super fast response and very fair pricing!"
+    date: "3 days ago",
+    comment: "Excellent service! The technician came in 2.5 hours and repaired the drum spin issue immediately. Highly recommend."
   },
   {
     id: 3,
-    name: "Amit Patel",
-    location: "T Nagar, Chennai",
-    appliance: "Front-Load Washing Machine",
+    name: "Suresh M.",
+    location: "Anna Nagar",
+    appliance: "Refrigerator Repair",
     rating: 5,
-    date: "2 weeks ago",
-    comment: "Excellent service! The drum was stuck and making huge noise during spinning. The technician arrived with the spare parts and fixed it quickly. Very responsive WhatsApp support."
+    date: "5 days ago",
+    comment: "Genuine spare parts used and fast troubleshooting. Visited within 3 hours. Refrigerator is working perfectly now."
   },
   {
     id: 4,
-    name: "Sandeep Krishnan",
-    location: "Tambaram, Chennai",
-    appliance: "Split AC",
+    name: "Karthik R.",
+    location: "Tambaram",
+    appliance: "AC Repair",
     rating: 5,
-    date: "3 weeks ago",
-    comment: "Highly recommend DMD Service. They filled the AC gas and did wet servicing. Price was exactly what was quoted on WhatsApp. No hidden charges and extremely polite technicians."
+    date: "1 week ago",
+    comment: "Very professional. The 3-hour doorstep commitment is real! Solved the cooling leakage issue on the spot."
   },
   {
     id: 5,
-    name: "Lakshmi Narayanan",
-    location: "Porur, Chennai",
-    appliance: "Top-Load Washing Machine",
+    name: "Anjali D.",
+    location: "Porur",
+    appliance: "Washing Machine Service",
     rating: 5,
-    date: "1 month ago",
-    comment: "Prompt service. The water drain problem in my washing machine was fixed in just 30 minutes. Genuine parts were used. Very professional work and trustworthy service in Chennai."
+    date: "1 week ago",
+    comment: "Tech reached my home in 2 hours. Diagnosed a board issue, had a genuine replacement ready, and completed the job swiftly."
   },
   {
     id: 6,
-    name: "Divya Chandran",
-    location: "Adyar, Chennai",
-    appliance: "Single Door Refrigerator",
+    name: "Venkatesh S.",
+    location: "T Nagar",
+    appliance: "Refrigerator Service",
     rating: 5,
-    date: "1 month ago",
-    comment: "Defrost issue in my fridge was resolved. Technician explained the issue clearly before starting. I'm very satisfied with their same-day doorstep service promise. It really works!"
+    date: "2 weeks ago",
+    comment: "DMD Services lives up to their 3-hour promise. No hidden charges and extremely polite service."
   }
 ];

@@ -1,52 +1,55 @@
 import React from 'react';
-import { Check, MessageSquare, ArrowRight } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
+
+const WhatsAppIcon = ({ className = "w-4 h-4" }) => (
+  <svg 
+    viewBox="0 0 24 24" 
+    className={`${className} fill-current`} 
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L0 24l6.335-1.662c1.746.953 3.71 1.458 5.704 1.459h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+  </svg>
+);
 
 export default function ServiceCard({ service, onViewDetails }) {
-  const whatsappUrl = `https://wa.me/919999999999?text=Hi%20DMD%20Service%2C%20I%20want%20to%20book%20${encodeURIComponent(service.name)}.%20Starting%20price%20is%20%E2%82%B9${service.price}.`;
+  const whatsappUrl = `https://wa.me/919999999999?text=Hello%20DMD%20Services%2C%20I%20would%20like%20to%20book%20a%20technician%20visit%20for%20${encodeURIComponent(service.name)}.%20Starting%20price%20is%20%E2%82%B9${service.price}.`;
 
   return (
-    <div className="bg-cardBg border border-borderColor rounded-2xl overflow-hidden group hover:border-primaryAccent/50 transition-all duration-300 flex flex-col h-full">
+    <div 
+      className="border border-borderColor rounded-2xl overflow-hidden group transition-transform duration-300 hover:-translate-y-[3px] flex flex-col h-full"
+      style={{ background: 'linear-gradient(180deg, #131A22, #0F141B)' }}
+    >
       {/* Service Image */}
       <div className="relative h-48 overflow-hidden bg-neutral-900">
         <img
           src={service.image}
           alt={service.name}
           loading="lazy"
-          className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
+          className="w-full h-full object-cover object-center"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-transparent to-transparent" />
-        <div className="absolute top-4 right-4 px-3 py-1 bg-background/80 backdrop-blur-sm border border-borderColor rounded-full">
-          <span className="text-xs text-textSecondary">Starts from</span>
-          <span className="text-sm font-bold text-primaryAccent ml-1">₹{service.price}</span>
-        </div>
+        <div className="absolute inset-0 bg-gradient-to-t from-[#0F141B]/95 via-transparent to-transparent" />
       </div>
 
       {/* Card Content */}
       <div className="p-6 flex flex-col flex-grow">
-        <h3 className="text-xl font-bold text-textPrimary mb-2 group-hover:text-primaryAccent transition-colors">
+        <h3 className="text-xl font-bold text-white mb-2">
           {service.name}
         </h3>
-        <p className="text-sm text-textSecondary mb-5 flex-grow leading-relaxed">
+        <p className="text-sm text-mutedText mb-5 flex-grow leading-relaxed">
           {service.shortDesc}
         </p>
 
-        {/* Feature Checkmarks */}
-        <ul className="space-y-2 mb-6">
-          {service.features.map((feature, idx) => (
-            <li key={idx} className="flex items-center text-xs text-textSecondary">
-              <div className="p-0.5 bg-successColor/10 rounded-full mr-2 text-successColor">
-                <Check className="w-3.5 h-3.5 stroke-[3]" />
-              </div>
-              <span>{feature}</span>
-            </li>
-          ))}
-        </ul>
+        {/* Pricing indicator */}
+        <div className="mb-6 flex items-baseline space-x-1">
+          <span className="text-xs text-mutedText/70">Starting</span>
+          <span className="text-xl font-black text-secondaryBlue">₹{service.price}</span>
+        </div>
 
         {/* Links & CTA */}
         <div className="space-y-3 mt-auto">
           <button
             onClick={() => onViewDetails(service)}
-            className="flex items-center justify-center space-x-1.5 w-full py-2.5 bg-neutral-800 hover:bg-neutral-700 text-xs font-semibold text-textPrimary rounded-lg border border-borderColor transition-colors cursor-pointer"
+            className="flex items-center justify-center space-x-1.5 w-full py-2.5 bg-secondaryBg hover:bg-borderColor text-xs font-bold text-white rounded-lg border border-borderColor transition-colors cursor-pointer"
           >
             <span>View Details & Pricing</span>
             <ArrowRight className="w-3.5 h-3.5" />
@@ -56,10 +59,10 @@ export default function ServiceCard({ service, onViewDetails }) {
             href={whatsappUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center justify-center space-x-2 w-full py-3 bg-primaryAccent hover:bg-amber-600 text-background text-sm font-extrabold rounded-lg transition-all duration-300 shadow-md shadow-primaryAccent/5"
+            className="flex items-center justify-center space-x-2 w-full py-3 bg-primaryBlue hover:bg-secondaryBlue text-white text-sm font-extrabold rounded-lg transition-all duration-300 shadow-[0_4px_12px_rgba(14,95,184,0.2)]"
           >
-            <MessageSquare className="w-4 h-4 fill-current stroke-none" />
-            <span>Book via WhatsApp</span>
+            <WhatsAppIcon className="w-4 h-4 fill-white" />
+            <span>Book Now</span>
           </a>
         </div>
       </div>
