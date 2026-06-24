@@ -5,6 +5,7 @@ import StickyCTA from './components/StickyCTA';
 import Home from './pages/Home';
 import { PrivacyPolicy, TermsAndConditions } from './pages/LegalDocs';
 import { X, Phone, Shield, CheckCircle, AlertTriangle } from 'lucide-react';
+import { whatsappNumber, phoneUrl } from './config/contact';
 
 const WhatsAppIcon = ({ className = "w-4 h-4" }) => (
   <svg 
@@ -37,8 +38,6 @@ export default function App() {
     setActiveLegal(null);
   };
 
-  const whatsappNumber = "919999999999";
-  const phoneUrl = "tel:+919999999999";
 
   return (
     <div className="flex flex-col min-h-screen bg-background text-textPrimary relative">
