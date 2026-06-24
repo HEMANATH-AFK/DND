@@ -1,16 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap');
+
 @import "tailwindcss";
 
 @theme {
-  --color-background: #0D0D0D;
-  --color-secondaryBg: #161616;
-  --color-cardBg: #1C1C1C;
-  --color-borderColor: #2A2A2A;
-  --color-primaryAccent: #F59E0B;
-  --color-textPrimary: #FFFFFF;
-  --color-textSecondary: #A1A1AA;
-  --color-successColor: #22C55E;
+  --color-background: #0B0F14;
+  --color-secondaryBg: #0F141B;
+  --color-cardBg: #131A22;
+  --color-borderColor: #1F2937;
   
-  --font-sans: 'Outfit', 'Inter', sans-serif;
+  --color-primaryBlue: #0E5FB8;
+  --color-secondaryBlue: #2D8CFF;
+  --color-iceBlue: #65B8FF;
+  --color-white: #FFFFFF;
+  --color-mutedText: #AAB3C2;
+  
+  /* Mappings for compatibility with existing code */
+  --color-primaryAccent: #2D8CFF;
+  --color-textPrimary: #FFFFFF;
+  --color-textSecondary: #AAB3C2;
+  --color-successColor: #0E5FB8;
+  
+  --font-sans: 'Inter', sans-serif;
+  --font-heading: 'Manrope', sans-serif;
 }
 
 @layer base {
@@ -21,6 +32,10 @@
     -webkit-font-smoothing: antialiased;
     overflow-x: hidden;
   }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+  }
 }
 
 /* Custom Scrollbar */
@@ -29,14 +44,14 @@
   height: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: #0D0D0D;
+  background: #0B0F14;
 }
 ::-webkit-scrollbar-thumb {
-  background: #2A2A2A;
+  background: #1F2937;
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #F59E0B;
+  background: #2D8CFF;
 }
 
 /* Smooth Scrolling */
@@ -48,6 +63,6 @@ html {
 input:-webkit-autofill,
 textarea:-webkit-autofill,
 select:-webkit-autofill {
-  -webkit-box-shadow: 0 0 0 1000px #1C1C1C inset !important;
+  -webkit-box-shadow: 0 0 0 1000px #131A22 inset !important;
   -webkit-text-fill-color: #FFFFFF !important;
 }
